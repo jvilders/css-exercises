@@ -89,3 +89,91 @@
   font-size: 13px;
   font-weight: normal;  
 }
+
+/* Keep it separate for myself */
+/* General styling */
+ul {
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template: 
+    "header header" 
+    "sidebar nav"
+    "sidebar article"
+    "footer footer"
+    / 1fr 4fr;
+  gap: 4px;
+}
+
+/* header */
+
+.header {
+  grid-area: header;
+
+  display: grid;
+  grid-template: 
+    "logo menu"
+    / 1fr 2fr;
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: left;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.menu > ul {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+/* sidebar */
+
+.sidebar {
+  grid-area: sidebar;
+
+  display: grid;
+  gap: 50px;
+}
+
+.sidebar > div {
+  display: grid;
+  align-content: center; /* align-items: center also works, don't see a reason to prefer one over the other */
+}
+
+/* nav */
+
+.nav {
+  grid-area: nav;
+}
+
+.nav > ul {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+/* article */
+
+.article {
+  grid-area: article;
+
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  height: 200px;
+}
+
+.footer {
+  grid-area: footer;
+}
